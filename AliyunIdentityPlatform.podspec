@@ -51,7 +51,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "nansong.zxc" => "nansong.zxc@alibaba-inc.com" }
+  spec.author             = { "zhenfei.mzf" => "zhenfei.mzf@alibaba-inc.com" }
   # Or just: spec.author    = "nansong.zxc"
   # spec.authors            = { "nansong.zxc" => "nansong.zxc@alibaba-inc.com" }
   # spec.social_media_url   = "https://twitter.com/nansong.zxc"
@@ -88,9 +88,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  #spec.source_files  = ["AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"]
-
-
+  spec.source_files  = "AliyunIdentityPlatform.framework/Headers/*.{h,m}"
   spec.public_header_files = "AliyunIdentityPlatform.framework/Headers/*.h"
 
 
