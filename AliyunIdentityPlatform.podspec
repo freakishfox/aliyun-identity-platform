@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AliyunIdentityPlatform"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "aliyun identity platform ios sdk"
 
   # This description is used to generate tags and improve search results.
