@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AliyunIdentityPlatform"
-  spec.version      = "1.0.3"
+  spec.version      = "1.0.4"
   spec.summary      = "aliyun identity platform ios sdk"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = ["AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"]
 
 
-  spec.public_header_files = "AliyunIdentityPlatform/Headers/*.h"
+  spec.public_header_files = "AliyunIdentityPlatform.framework/Headers/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
