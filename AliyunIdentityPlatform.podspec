@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "AliyunIdentityPlatform"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.3"
   spec.summary      = "aliyun identity platform ios sdk"
 
   # This description is used to generate tags and improve search results.
@@ -62,7 +62,6 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  spec.platform     = :ios
   spec.platform     = :ios, "9.0"
 
   #  When using multiple platforms
@@ -89,10 +88,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"
+  spec.source_files  = ["AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"]
 
 
-  # spec.public_header_files = "AliyunIdentityPlatform/**/*.h"
+  spec.public_header_files = "AliyunIdentityPlatform/Headers/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -107,12 +106,13 @@ Pod::Spec.new do |spec|
   # spec.resources = "Resources/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
-  spec.resource_bundles = {
-                            "AliyunIdentityPlatform.bundle"=>"AliyunIdentityPlatform.framework/AliyunIdentityPlatform.bundle",
-                           "AliyunIdentityFace.bundle"=>"AliyunIdentityFace.framework/AliyunIdentityFace.bundle", 
-                           "AliyunIdentityOcr.bundle"=>"AliyunIdentityOcr.framework/AliyunIdentityOcr.bundle", 
-                           "ToygerService.bundle"=>"ToygerService.framework/ToygerService.bundle"
-                         }
+  spec.resources =  [
+    "AliyunIdentityPlatform.framework/AliyunIdentityPlatform.bundle", 
+    "AliyunIdentityFace.framework/AliyunIdentityFace.bundle", 
+    "AliyunIdentityOcr.framework/AliyunIdentityOcr.bundle", 
+    "ToygerService.framework/ToygerService.bundle"
+  ]
+                         
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -121,12 +121,35 @@ Pod::Spec.new do |spec|
   #  the lib prefix of their name.
   #
 
-  spec.vendored_frameworks = "AliyunIdentityFace.framework", "AliyunIdentityOcr.framework", "AliyunIdentityUtils.framework", "AliyunOSSiOS.framework", "APMUtils.framework", "ToygerService.framework", "XMedia.framework", "xNN.framework"
+  spec.vendored_frameworks = [
+    "AliyunIdentityFace.framework", 
+    "AliyunIdentityOcr.framework", 
+    "AliyunIdentityUtils.framework", 
+    "AliyunOSSiOS.framework", 
+    "APMUtils.framework", 
+    "ToygerService.framework", 
+    "XMedia.framework", 
+    "xNN.framework"
+  ]
 
-  spec.frameworks = "AudioToolbox", "CoreMedia", "AVFoundation", "SystemConfiguration", "UIKit", "CoreTelephony", "CoreMotion", "Accelerate"
+  spec.frameworks = [
+    "AudioToolbox", 
+    "CoreMedia", 
+    "AVFoundation", 
+    "SystemConfiguration", 
+    "UIKit", 
+    "CoreTelephony", 
+    "CoreMotion", 
+    "Accelerate"
+  ]
 
   # spec.library   = "iconv"
-  spec.libraries = "resolve", "sqlite3", "c++", "z"
+  spec.libraries = [
+    "resolv", 
+    "sqlite3", 
+    "c++", 
+    "z"
+  ]
 
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -137,6 +160,7 @@ Pod::Spec.new do |spec|
 
   # spec.requires_arc = true
 
+  spec.pod_target_xcconfig = { 'VALID_ARCHS[sdk=iphonesimulator*]' => '' }
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
 
