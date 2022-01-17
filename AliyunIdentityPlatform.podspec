@@ -15,19 +15,18 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "aliyun-identity-platform"
+  spec.name         = "AliyunIdentityPlatform"
   spec.version      = "1.0.1"
-  spec.summary      = "aliyun-identity-platform ios sdk"
+  spec.summary      = "aliyun identity platform ios sdk"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = <<-DESC
-                   DESC
+  spec.description  = "aliyun identity platform face verify ios sdk"
 
-  spec.homepage     = "https://www.aliyun.com"
+  spec.homepage     = "https://help.aliyun.com/document_detail/181999.html"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -38,8 +37,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  # spec.license      = "MIT"
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,10 +89,10 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  # spec.source_files  = "Classes", "Classes/**/*.{h,m}"
+  spec.source_files  = "AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"
 
 
-  spec.public_header_files = "AliyunIdentityPlatform/**/*.h"
+  # spec.public_header_files = "AliyunIdentityPlatform/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -108,6 +107,12 @@ Pod::Spec.new do |spec|
   # spec.resources = "Resources/*.png"
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
+  spec.resource_bundles = {
+                            "AliyunIdentityPlatform.bundle"=>"AliyunIdentityPlatform.framework/AliyunIdentityPlatform.bundle",
+                           "AliyunIdentityFace.bundle"=>"AliyunIdentityFace.framework/AliyunIdentityFace.bundle", 
+                           "AliyunIdentityOcr.bundle"=>"AliyunIdentityOcr.framework/AliyunIdentityOcr.bundle", 
+                           "ToygerService.bundle"=>"ToygerService.framework/ToygerService.bundle"
+                         }
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -116,23 +121,9 @@ Pod::Spec.new do |spec|
   #  the lib prefix of their name.
   #
 
-  # spec.framework  = "SomeFramework"
-  spec.frameworks = "AliyunIdentityFace.framework", 
-                    "AliyunIdentityOcr.framework", 
-                    "AliyunIdentityUtils.framework", 
-                    "AliyunOSSiOS.framework",
-                    "APMUtils.framework",
-                    "ToygerService.framework",
-                    "XMedia.framework",
-                    "xNN.framework",
-                    "AudioToolbox.framework",
-                    "CoreMedia.framework",
-                    "AVFoundation.framework",
-                    "SystemConfiguration.framework",
-                    "UIKit.framework",
-                    "CoreTelephony.framework",
-                    "CoreMotion.framework",
-                    "Accelerate.framework"
+  spec.vendored_frameworks = "AliyunIdentityFace.framework", "AliyunIdentityOcr.framework", "AliyunIdentityUtils.framework", "AliyunOSSiOS.framework", "APMUtils.framework", "ToygerService.framework", "XMedia.framework", "xNN.framework"
+
+  spec.frameworks = "AudioToolbox", "CoreMedia", "AVFoundation", "SystemConfiguration", "UIKit", "CoreTelephony", "CoreMotion", "Accelerate"
 
   # spec.library   = "iconv"
   spec.libraries = "resolve", "sqlite3", "c++", "z"
