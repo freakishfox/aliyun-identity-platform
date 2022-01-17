@@ -37,8 +37,8 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  # spec.license      = "MIT"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
+  spec.license      = "MIT"
+  # spec.license      = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -88,7 +88,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = ["AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"]
+  #spec.source_files  = ["AliyunIdentityPlatform", "AliyunIdentityPlatform.framework/Headers/*.{h,m}"]
 
 
   spec.public_header_files = "AliyunIdentityPlatform.framework/Headers/*.h"
@@ -122,6 +122,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.vendored_frameworks = [
+    "AliyunIdentityPlatform.framework",
     "AliyunIdentityFace.framework", 
     "AliyunIdentityOcr.framework", 
     "AliyunIdentityUtils.framework", 
